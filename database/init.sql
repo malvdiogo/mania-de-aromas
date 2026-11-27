@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,email TEXT UNIQUE NOT NULL,hash TEXT NOT NULL,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS categories(id INTEGER PRIMARY KEY,name TEXT UNIQUE NOT NULL);
+CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY,sku TEXT UNIQUE,name TEXT NOT NULL,description TEXT DEFAULT '',category_id INTEGER REFERENCES categories(id),cost_cents INTEGER CHECK(cost_cents>=0),price_cents INTEGER NOT NULL CHECK(price_cents>=0),promo_cents INTEGER CHECK(promo_cents>=0),stock INTEGER NOT NULL DEFAULT 0 CHECK(stock>=0),min_stock INTEGER NOT NULL DEFAULT 0,image TEXT,image2 TEXT,featured INTEGER NOT NULL DEFAULT 0,active INTEGER NOT NULL DEFAULT 1,created_at TEXT DEFAULT CURRENT_TIMESTAMP,updated_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE INDEX IF NOT EXISTS ix_p_cat ON products(category_id,active);
+CREATE TABLE IF NOT EXISTS orders(id INTEGER PRIMARY KEY,code TEXT UNIQUE NOT NULL,customer_name TEXT NOT NULL,customer_phone TEXT,delivery TEXT NOT NULL,address TEXT,total_cents INTEGER NOT NULL,payment_method TEXT NOT NULL DEFAULT 'a_combinar',status TEXT NOT NULL DEFAULT 'aguardando_atendimento',notes TEXT DEFAULT '',created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE INDEX IF NOT EXISTS ix_o_status ON orders(status,created_at);
+CREATE TABLE IF NOT EXISTS order_items(id INTEGER PRIMARY KEY,order_id INTEGER NOT NULL REFERENCES orders(id),product_id INTEGER NOT NULL REFERENCES products(id),name TEXT NOT NULL,unit_cents INTEGER NOT NULL,qty INTEGER NOT NULL CHECK(qty>0));
+CREATE TABLE IF NOT EXISTS stock_moves(id INTEGER PRIMARY KEY,product_id INTEGER NOT NULL REFERENCES products(id),delta INTEGER NOT NULL,reason TEXT NOT NULL,order_id INTEGER,user_email TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY,value TEXT NOT NULL DEFAULT '');
+INSERT OR IGNORE INTO settings(key,value) VALUES('whatsapp',''),('instagram','mania.dearomas'),('hours','Segunda a sábado, das 10h às 19h'),('address','Avenida das Garoupas, 156A, Balneário São Francisco, São Paulo - SP'),('about','');
+UPDATE categories SET name='Presentes' WHERE name='Kits para presente' AND NOT EXISTS(SELECT 1 FROM categories WHERE name='Presentes');
+INSERT OR IGNORE INTO categories(name) VALUES('Perfumaria'),('Cosméticos'),('Maquiagem'),('Presentes');
+INSERT OR IGNORE INTO settings(key,value) VALUES('address2','Estrada do Alvarenga, 1993, Mar Paulista');

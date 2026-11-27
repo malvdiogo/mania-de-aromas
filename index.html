@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prévia visual da Mania de Aromas Outlet — perfumes, cosméticos e maquiagem.">
+  <title>Mania de Aromas Outlet — Prévia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./preview-assets/css/style.css">
+  <link rel="stylesheet" href="./preview-assets/css/preview.css">
+</head>
+<body>
+  <div class="bar">Perfumaria · Cosméticos · Maquiagem · Preços especiais</div>
+  <div class="top">
+    <header>
+      <a href="#inicio" aria-label="Mania de Aromas - início"><img src="./preview-assets/images/logo.png" alt="Mania de Aromas Outlet"></a>
+      <nav aria-label="Navegação principal">
+        <a href="#inicio">Início</a><a href="#produtos">Produtos</a><a href="#contato">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn theme-toggle" id="themeToggle" type="button">☾ <span>Escuro</span></button>
+        <a class="btn dark" href="#produtos">Ver produtos</a>
+      </div>
+    </header>
+  </div>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="w">
+        <span class="preview-kicker">MANIA DE AROMAS OUTLET</span>
+        <h1>As marcas que você ama, com preços abaixo do catálogo.</h1>
+        <p>Perfumes, cosméticos e maquiagem com pronta entrega.</p>
+        <a class="btn dark" href="#produtos">Conhecer os produtos</a>
+      </div>
+    </section>
+
+    <section class="sec w">
+      <h2>Categorias</h2>
+      <div class="cats" id="categories"></div>
+    </section>
+
+    <section class="sec w featured-section" id="destaques">
+      <div class="feature-heading">
+        <div><span class="eyebrow">SELEÇÃO ESPECIAL</span><h2>Produtos em destaque</h2></div>
+        <span class="muted">Escolhas da Mania de Aromas</span>
+      </div>
+      <div id="feature"></div>
+    </section>
+
+    <section class="sec w" id="produtos">
+      <h2>Conheça nossos produtos</h2>
+      <div class="ctl">
+        <input id="search" type="search" placeholder="Buscar produto..." aria-label="Buscar produto">
+        <select id="categoryFilter" aria-label="Filtrar categoria"><option value="">Todas as categorias</option></select>
+        <select id="sort" aria-label="Ordenar produtos">
+          <option value="name">Ordenar por nome</option>
+          <option value="asc">Menor preço</option>
+          <option value="desc">Maior preço</option>
+        </select>
+      </div>
+      <div id="productGrid"></div>
+    </section>
+
+    <section class="sec w" id="contato">
+      <h2>Encontre a Mania de Aromas</h2>
+      <div class="stores" id="stores"></div>
+      <div class="box preview-about">
+        <h3>Sobre a loja</h3>
+        <p id="about"></p>
+        <p id="hours"></p>
+        <a class="btn" id="instagram" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </section>
+    <div class="preview-notice"><strong>Prévia demonstrativa:</strong> catálogo e navegação visual. Carrinho, pedidos, login e painel administrativo não estão conectados ao banco de dados.</div>
+  </main>
+  <footer><div class="w"><b>Mania de Aromas Outlet</b><p>Prévia visual independente do sistema principal.</p></div></footer>
+  <script>window.MANIA_PREVIEW = {"products": [{"id": 2, "name": "212 VIP Black  Eau de Parfum", "description": "Quente, sensual e viciante, esta Eau de Parfum aromática ambarada amadeirada combina absinto, couro preto e baunilha em um elegante frasco preto com efeito degradê.", "category": "Perfumaria", "price": 60000, "promo": null, "image": "./preview-assets/uploads/79d4b5065e4c61ecbf20427d.jpg", "image2": "./preview-assets/uploads/b96ec4fdff981a0101c26d68.jpg", "featured": true}, {"id": 3, "name": "Asad Bourbon", "description": "O Perfume Asad Bourbon Lattafa EDP Masculino 100ml é uma fragrância sofisticada e envolvente, desenvolvida para homens que desejam afirmar sua presença com elegância e personalidade. Este Eau de Parfum se destaca por sua composição complexa, sendo a escolha ideal para quem busca um aroma marcante que equilibra perfeitamente o poder e o refinamento.", "category": "Perfumaria", "price": 30000, "promo": null, "image": "./preview-assets/uploads/b74f86ee637e971a8e732fb5.jpg", "image2": "./preview-assets/uploads/f02662877c2cd17e1dcf093c.jpg", "featured": true}, {"id": 5, "name": "Cebolinha Desodorante Colônia Jequiti, 25 ml", "description": "O famoso personagem dos quadrinhos, Cebolinha, agora têm sua própria colônia! Traga ainda mais diversão para o dia a dia com a fragrância refrescante e alegre, onde na saída as notas cítricas de bergamota e limão dão brilho para as notas levemente aquáticas e frutadas envolvidas pelo fundo amadeirado de sândalo, âmbar e musk.\r\n\r\nA colônia de 25 ml mostra a diversão das histórias em quadrinhos, de onde o personagem foi originado e estampa o grande sorriso da alegria que a fragrância traz quando é utilizada.", "category": "Perfumaria", "price": 3000, "promo": null, "image": "./preview-assets/uploads/b3ca355952abd6990da7e0f0.jpg", "image2": "./preview-assets/uploads/108053c3c1182a5541eb17cb.jpg", "featured": false}, {"id": 7, "name": "Combo Black: Desodorante Colônia 100ml + Body Spray 100ml", "description": "Malbec Black, a expressão mais notável de Malbec.O Combo Malbec Black reúne o Desodorante Colônia e o Body Spray, combinando a perfumação intensa e a proteção duradoura da fragrância amadeirada oriental.Revele seu poder de sedução com a sofisticação de Malbec Black:", "category": "Presentes", "price": 30000, "promo": 25000, "image": "./preview-assets/uploads/fc485869ab20ba443750c09e.jpg", "image2": "./preview-assets/uploads/dd55f35bf1425b7a09e292f8.jpg", "featured": true}, {"id": 4, "name": "Creme Hidratante Natura Tododia", "description": "• Indicado para quem busca hidratação e nutrição corporal diária, o Creme Hidratante Corporal Nutritivo Tododia Cereja e Avelã ajuda a combater o ressecamento, deixando a pele mais firme, macia e protegida;", "category": "Cosméticos", "price": 6000, "promo": null, "image": "./preview-assets/uploads/fc05b7ea262b0150c928359b.jpg", "image2": "./preview-assets/uploads/bdf9e6c75c0d0a04b3c48874.jpg", "featured": false}, {"id": 6, "name": "GLOSS LIPHONEY", "description": "Gloss de mel, sucesso de vendas que entrega brilho intenso e efeito sofisticado nos lábios. Textura confortável que hidrata e valoriza a maquiagem.", "category": "Maquiagem", "price": 6000, "promo": 3000, "image": "./preview-assets/uploads/d049292c08060938813d6e8b.jpg", "image2": "./preview-assets/uploads/e4af3c257726e2707287645a.jpg", "featured": false}, {"id": 1, "name": "colónia malbec oboticario", "description": "Com nova embalagem e mesma fragrância, revela a sedução e o mistério da noite com notas irresistíveis.", "category": "Perfumaria", "price": 21990, "promo": 19990, "image": "./preview-assets/uploads/bda8ff466a842e40f0d8313e.jpg", "image2": "./preview-assets/uploads/f5acc633185d5683f2b0acb3.jpg", "featured": true}], "categories": ["Perfumaria", "Cosméticos", "Maquiagem", "Presentes"], "about": "Perfumes e cosméticos com até 50% OFF + Cacau Show 🍫\n📦 Pronta entrega | Preços abaixo do catálogo\nO melhor da Avon, Natura, Boticário, Eudora e mais", "hours": "Segunda a sábado, das 10h às 19h", "address": "Avenida das Garoupas, 156A, Balneário São Francisco, São Paulo - SP", "address2": "Estrada do Alvarenga, 1993, Mar Paulista", "instagram": "mania.dearomas"};</script>
+  <script src="./preview-assets/js/preview.js"></script>
+</body>
+</html>
